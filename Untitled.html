@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.box{
+    position: absolute;
+    top: 150px;
+    left: 150px;
+}
+button{
+    position: absolute;
+    top: 350px;
+    left: 160px;
+    width: 160px;
+    height: 40px;
+}
+    </style>
+</head>
+<body>
+
+
+    <div class="box"></div>
+    <button>Enter</button>
+    
+<script>
+var colors = ['red', 'blue', 'green', 'teal', 'rosybrown', 'tan', 'plum', 'saddlebrown'];
+var boxes = document.querySelectorAll(".box");
+var button = document.querySelector("button");
+
+button.addEventListener("click", function () {
+for (i = 0; i < boxes.length; i++) {
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    boxes[i].style.backgroundColor = colors[Math.floor(Math.random() *colors.length)];
+    boxes[i].style.width = '170px';
+    boxes[i].style.height = '150px';
+    boxes[i].style.display = 'inline-block';
+    boxes[i].innerHTML = "#" + randomColor;
+}
+});
+
+button.style.cursor = "pointer";   
+</script>
+</body>
+</html>
